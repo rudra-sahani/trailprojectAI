@@ -1,11 +1,31 @@
-<div align="center">
+# VeriReview AI — Bias-Aware 360° Performance Review Intelligence System
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+VeriReview AI is an enterprise-grade performance review platform that enables organizations to conduct fair, transparent, explainable, and evidence-backed employee evaluations through a multi-agent AI workflow, while ensuring that human managers retain authority over final decisions.
 
-  <h1>Built with AI Studio</h2>
+## Architecture Highlights
+- **Full-Stack Architecture:** React (Vite) frontend + Node.js Express backend + PostgreSQL database layer.
+- **5-Agent AI Pipeline:** Collector $\rightarrow$ Evidence Retrieval $\rightarrow$ Bias Detection $\rightarrow$ Synthesis $\rightarrow$ Human Review $\rightarrow$ Governance & Audit.
+- **Evidence Grounding:** Every claim is linked to specific source evidence nodes.
+- **Explainable Bias Detection:** 4 sub-checks (source imbalance, recency weighting, sentiment extremity, unsupported claims).
+- **Human-in-the-Loop:** Per-claim approval, editing, and rejection. Reports cannot be finalized with pending claims.
+- **Immutable Audit Trail:** Append-only audit history of all agent runs and human decisions.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Architecture Documents
+- [CONTEXT.md](./docs/environment.md)
+- [REQUIREMENTS.md](./REQUIREMENTS.md)
+- [ARCHITECTURE.md](./ARCHITECTURE.md)
+- [DATABASE.md](./DATABASE.md)
+- [API_SPEC.md](./API_SPEC.md)
+- [UI_SPEC.md](./UI_SPEC.md)
+- [TASKS.md](./TASKS.md)
+- [AI_AGENT_ARCHITECTURE.md](./docs/roles.md)
+- [AGENT_PROTOCOL.md](./docs/redaction-policy.md)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Getting Started
 
-</div>
+1. Copy `.env.example` to `.env`
+2. Run development server:
+```bash
+npm run dev
+```
+3. Access the web interface at `http://localhost:3000`

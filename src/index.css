@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   VERIREVIEW AI - FORTUNE 500 ENTERPRISE DESIGN SYSTEM TOKENS
+   Inspired by Linear, Vercel, Stripe Dashboard, Notion & GitHub Enterprise
+   ========================================================================== */
+
+:root {
+  /* Brand Palette (Customer-Provided Color System) */
+  --color-brand-primary: #51E2F5;     /* Primary Accent (Cyan Ice) */
+  --color-brand-secondary: #9DF9EF;   /* Secondary Accent (Pale Mint) */
+  --color-brand-surface: #EDF7F6;     /* Surface Light Tint */
+  --color-brand-highlight: #FFA8BE;   /* Soft Coral Pink Highlight */
+  --color-brand-neutral: #A28089;     /* Warm Taupe/Slate Structure */
+
+  /* Neutral Surface Palette (60% Rule) */
+  --color-bg-app: #080C14;
+  --color-bg-surface: #0E1626;
+  --color-bg-card: #131F33;
+  --color-bg-elevated: #182842;
+  --color-bg-overlay: rgba(8, 12, 20, 0.82);
+
+  /* Structural UI Palette (30% Rule) */
+  --color-border-subtle: rgba(162, 128, 137, 0.18);
+  --color-border-strong: rgba(162, 128, 137, 0.35);
+  --color-border-accent: rgba(81, 226, 245, 0.3);
+  --color-border-hover: rgba(81, 226, 245, 0.5);
+
+  /* Accent & Interactions (10% Rule) */
+  --color-interactive-primary: #51E2F5;
+  --color-interactive-hover: #38d6eb;
+  --color-interactive-active: #22c7e0;
+  
+  /* Status Tokens */
+  --color-status-success: #10B981;
+  --color-status-success-bg: rgba(16, 185, 129, 0.12);
+  --color-status-warning: #F59E0B;
+  --color-status-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-status-error: #EF4444;
+  --color-status-error-bg: rgba(239, 68, 68, 0.12);
+  --color-status-info: #51E2F5;
+  --color-status-info-bg: rgba(81, 226, 245, 0.12);
+
+  /* Typography Fonts */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px -3px rgba(81, 226, 245, 0.25);
+  --shadow-glow-pink: 0 0 20px -3px rgba(255, 168, 190, 0.25);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset & Base Typography */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-app);
+  color: #F1F5F9;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar for Enterprise Density */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(14, 22, 38, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(162, 128, 137, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(81, 226, 245, 0.5);
+}
+
+/* Focus Ring Standard */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+/* Subtle Gradient Glow Backgrounds */
+.bg-enterprise-radial {
+  background: radial-gradient(circle at 50% 0%, rgba(81, 226, 245, 0.08) 0%, rgba(157, 249, 239, 0.03) 35%, transparent 70%);
+}
+
+.bg-hero-glow {
+  background: radial-gradient(800px circle at 50% -100px, rgba(81, 226, 245, 0.12), transparent 80%);
+}
+
+/* Linear/Stripe Card Glass Effect (Refined, Non-Gaudy) */
+.enterprise-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.enterprise-card:hover {
+  border-color: var(--color-border-strong);
+}
+
+.enterprise-card-interactive {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.enterprise-card-interactive:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Badge Styles */
+.badge-cyan {
+  background-color: rgba(81, 226, 245, 0.12);
+  color: #51E2F5;
+  border: 1px solid rgba(81, 226, 245, 0.3);
+}
+
+.badge-mint {
+  background-color: rgba(157, 249, 239, 0.12);
+  color: #9DF9EF;
+  border: 1px solid rgba(157, 249, 239, 0.3);
+}
+
+.badge-pink {
+  background-color: rgba(255, 168, 190, 0.12);
+  color: #FFA8BE;
+  border: 1px solid rgba(255, 168, 190, 0.3);
+}
+
+.badge-neutral {
+  background-color: rgba(162, 128, 137, 0.12);
+  color: #D1C5C8;
+  border: 1px solid rgba(162, 128, 137, 0.25);
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  background-color: var(--color-brand-primary);
+  color: #080C14;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 0 12px rgba(81, 226, 245, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-interactive-hover);
+  box-shadow: 0 0 20px rgba(81, 226, 245, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background-color: var(--color-interactive-active);
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-elevated);
+  color: #F1F5F9;
+  border: 1px solid var(--color-border-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: #1E304D;
+  border-color: var(--color-brand-primary);
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #CBD5E1;
+  border: 1px solid var(--color-border-subtle);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-border-strong);
+  color: #F8FAFC;
+  background-color: rgba(255, 255, 255, 0.03);
+}
